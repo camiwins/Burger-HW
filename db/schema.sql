@@ -9,11 +9,11 @@ CREATE TABLE burgersTable (
     PRIMARY KEY (id)
 );
 
-INSERT INTO burgers (burgerName, isDevoured)
+INSERT INTO burgersTable (burgerName, isDevoured)
 VALUES ("Hamburger", false);
 
-INSERT INTO burgers (burgerName, isDevoured)
-VALUES ("Cheeseburger", true);
+INSERT INTO burgersTable (burgerName, isDevoured)
+VALUES ("Cheeseburger", false);
 
-INSERT INTO burgers (burgerName, isDevoured)
+INSERT INTO burgersTable (burgerName, isDevoured)
 VALUES ("Veggie Burger", false);

@@ -1,43 +1,62 @@
 <div class="container">
     <div class="row">
         <div class="col">
-
-            <div class="jumbotron jumbotron-fluid" style="background-color:white">
-                <div class="container">
-                    <img src="https://i.pinimg.com/originals/7a/a8/f0/7aa8f01c9bdce563486b0833351db719.jpg">
-                    <h1 class="display-4 text-center">EAT DA BURGER</h1>
-                    <p class="lead text-center">Make a burger. Devour It. Repeat.</p>
-                </div>
-            </div>
-
-            <h2>New Burger</h2>
-
-            <form class="create-form">
-
-                <div class="form-group">
-                    <label for="ca">Burger Name:</label>
-                    <input type="text" id="ca" name="name">
-                </div>
-
-                <div class="form-group">
-                    <label for="devoured">Devoured?</label><br>
-                    <input type="radio" name="devoured" value="1" checked> Devoured!<br>
-                    <input type="radio" name="devoured" value="0"> Not Devoured
-                </div>
-
-
-                <button class="add-burger" type="submit">Add Burger</button>
-            </form>
-
-            <hr>
-
-            <h2>All Burgers</h2>
-            {{#each burgers}}
-            {{> burgers/burger-block}}
-            {{/each}}
-
-
-
+            <img src="https://i.pinimg.com/originals/7a/a8/f0/7aa8f01c9bdce563486b0833351db719.jpg">
+            <h1 class="display-4 text-center">EAT DA BURGER</h1>
+            <p class="lead text-center">Make a burger. Devour It. Repeat.</p>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="text-center">
+                <h2>New Burger</h2>
+                <form class="create-form">
+                    <div class="form-group">
+                        <label for="burger">Burger Name:</label><br>
+                        <input type="text" id="burger" name="name">
+                    </div>
+                    <button class="add-burger btn-danger btn-lg" type="submit">Add Burger</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="card mt-5">
+                <div class="card-body">
+                    <h2>You hungry?</h2>
+                    {{#each burgers}}
+                    {{#unless isDevoured}}
+                    {{> burgers/burger-block}}
+                    {{/unless}}
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card mt-5">
+                <div class="card-body">
+                    <h2>Devoured!</h2>
+                    {{#each burgers}}
+                    {{#if isDevoured}}
+                    {{> burgers/burger-block}}
+                    {{/if}}
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+
+    </div>
+
 </div>
+</div>
+</div>
+
+<footer class="footer mt-5 text-center">
+    <div class="container">
+        <span class="text-muted">Eat da burgers. @camiwins 2019</span>
+    </div>
+</footer>

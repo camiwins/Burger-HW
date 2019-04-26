@@ -20,8 +20,7 @@ $(function () {
         console.log("added");
 
         var newBurger = {
-            burgerName: $("#ca").val().trim(),
-            isDevoured: $("[name=devoured]:checked").val().trim()
+            burgerName: $("#burger").val().trim(),
         };
         console.log(newBurger);
 
